@@ -1,29 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField] Vector3 offset;
-
-    private bool CheckThreshold = false;
-
-
+    private Transform CameraTransform;
 
     private void Start()
     {
-        offset = player.transform.position - transform.position;
+        CameraTransform = this.GetComponent<Transform>();
     }
 
     private void LateUpdate()
     {
-        if (CheckThreshold)
-        {
-            this.transform.position = player.transform.position - offset;
-        }
+        CameraTransform.position = player.transform.position + offset;
     }
-
-
-
 }
+

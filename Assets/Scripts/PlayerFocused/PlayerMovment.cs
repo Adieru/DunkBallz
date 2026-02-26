@@ -6,7 +6,8 @@ using UnityEngine;
 public class PlayerMovment : MonoBehaviour
 {
     [SerializeField] int speed;
-    [SerializeField] int jumpForce;
+    [SerializeField] float jumpForce;
+    private bool JumpAllowed = false;
     private Rigidbody2D playerRB;
 
     private void Start()
@@ -21,10 +22,17 @@ public class PlayerMovment : MonoBehaviour
         playerRB.velocity = new Vector2(speed, playerRB.velocity.y);
 
         //Jump
-        if(Input.GetKey(KeyCode.Space))
+        if(JumpAllowed)
         {
             playerRB.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            JumpAllowed = true;
+        }
+    }
 }
