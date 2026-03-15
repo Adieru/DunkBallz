@@ -8,7 +8,7 @@ public class BackgroundScroll : MonoBehaviour
     [SerializeField] Transform playerTransform;
 
     private MeshRenderer BGmeshRenderer;
-    private float scrollSpeed = 0.01f;
+    private float scrollSpeed = 0.05f;
 
 
     private void Start()
@@ -20,6 +20,7 @@ public class BackgroundScroll : MonoBehaviour
     {
         BGmeshRenderer.material.mainTextureOffset += new Vector2(scrollSpeed * Time.deltaTime, 0);
 
-        this.transform.position = new Vector3(playerTransform.position.x, this.transform.position.y, this.transform.position.z);
+        this.transform.position = new Vector3(playerTransform.position.x, 0, 10);
     }
+
 }
