@@ -16,7 +16,7 @@ public class GameOverManagement : MonoBehaviour
     [SerializeField] GameObject GameOverPanel;
 
     //Audio
-    [SerializeField] AudioSource GameOverSound;
+    [SerializeField] AudioSource GameOverSource;
     [SerializeField] AudioClip DeathSFX;
 
 
@@ -78,14 +78,11 @@ public class GameOverManagement : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         this.gameObject.SetActive(false);
-        GameOverSound.PlayOneShot(DeathSFX);
+        GameOverSource.PlayOneShot(DeathSFX);
 
         GameOverPanel.SetActive(true);
 
         Time.timeScale = 0;
-
-        
-
 
     }
 
