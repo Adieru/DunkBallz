@@ -13,9 +13,18 @@ public class GameOverManagement : MonoBehaviour
     private Vector3 Enter_Pos;
     private Vector3 Exit_Pos;
 
+    [SerializeField] GameObject GameOverPanel;
+
+    //Audio
+    [SerializeField] AudioSource GameOverSound;
+    [SerializeField] AudioClip DeathSFX;
+
 
     private void Start()
     {
+
+        GameOverPanel.SetActive(false);
+
         Debug.Log("Check");
         Enter_Pos = this.transform.position;
     }
@@ -26,8 +35,8 @@ public class GameOverManagement : MonoBehaviour
 
         if(distance > SafeDistance && !HasCrossedSafeDistance && GameOver)
         {
-            Debug.Log("GameOver");
-            
+           StartCoroutine(GameOverFunc());
+
         }
     }
 
@@ -48,7 +57,7 @@ public class GameOverManagement : MonoBehaviour
 
         if((Mathf.Abs(Enter_Pos.y) > Mathf.Abs(Exit_Pos.y)) && GameOver)
         {
-            GameOverFunc();
+            StartCoroutine(GameOverFunc());
         }
     }
 
@@ -57,19 +66,26 @@ public class GameOverManagement : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("LimitZone") && GameOver)
         {
-            GameOverFunc();
+            StartCoroutine(GameOverFunc());
         }
 
     }
 
-    private void GameOverFunc()
+    IEnumerator GameOverFunc()
     {
+        
 
+        yield return new WaitForSeconds(0.5f);
+
+        this.gameObject.SetActive(false);
+        GameOverSound.PlayOneShot(DeathSFX);
+
+        GameOverPanel.SetActive(true);
 
         Time.timeScale = 0;
 
+        
 
-        //Show gameover panel
 
     }
 
