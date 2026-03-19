@@ -145,16 +145,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172082149}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1438052791}
+  m_Father: {fileID: 1548612536}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 238, y: 274}
+  m_AnchoredPosition: {x: -302, y: 870}
   m_SizeDelta: {x: 440.3037, y: 103.1198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &172082151
@@ -446,7 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1fad932faf41549a38e368bb3ff036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOver: 1
+  GameOver: 0
   SafeDistance: 6
   GameOverPanel: {fileID: 767368206}
   GameOverSource: {fileID: 1149885515}
@@ -463,10 +463,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9efff397e7df08408f1d94fb618fdbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScorePanel: {fileID: 1438052790}
   ScoreText: {fileID: 172082151}
   ScoreAudioSource: {fileID: 1149885515}
   ScoreAudioClip: {fileID: 8300000, guid: e9affcfc1c281024680ae190d7793195, type: 3}
+  Score: 0
 --- !u!1 &266893919
 GameObject:
   m_ObjectHideFlags: 0
@@ -2133,38 +2133,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 48.737, y: -32.428, z: -3.199}
---- !u!1 &1438052790
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1438052791}
-  m_Layer: 0
-  m_Name: ScorePanel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1438052791
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438052790}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -540, y: 596, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 172082150}
-  m_Father: {fileID: 1548612536}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1520011860
 GameObject:
   m_ObjectHideFlags: 0
@@ -2381,7 +2349,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 767368207}
-  - {fileID: 1438052791}
+  - {fileID: 172082150}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

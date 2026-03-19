@@ -5,7 +5,6 @@ using TMPro;
 
 public class ScoreMangement : MonoBehaviour
 {
-    [SerializeField] GameObject ScorePanel;
     [SerializeField] TextMeshProUGUI ScoreText;
 
     [SerializeField] AudioSource ScoreAudioSource;
@@ -15,7 +14,7 @@ public class ScoreMangement : MonoBehaviour
 
     private void Start()
     {
-        ScoreText.text = "Score : " + Score;
+        ScoreText.text = "Score : " + Score.ToString();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -24,8 +23,8 @@ public class ScoreMangement : MonoBehaviour
         {
             ScoreAudioSource.PlayOneShot(ScoreAudioClip);
 
-            Score++;
-            ScoreText.text = "Score : " + Score;
+            Score ++;
+            ScoreText.text = "Score : " + Score.ToString();
 
         }
 

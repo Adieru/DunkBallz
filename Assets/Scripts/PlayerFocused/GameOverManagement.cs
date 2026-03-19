@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameOverManagement : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class GameOverManagement : MonoBehaviour
 
     [SerializeField] GameObject GameOverPanel;
 
+
     //Audio
     [SerializeField] AudioSource GameOverSource;
     [SerializeField] AudioClip DeathSFX;
@@ -24,8 +26,6 @@ public class GameOverManagement : MonoBehaviour
     {
 
         GameOverPanel.SetActive(false);
-
-        Debug.Log("Check");
         Enter_Pos = this.transform.position;
     }
 
@@ -55,7 +55,7 @@ public class GameOverManagement : MonoBehaviour
             Exit_Pos = this.transform.position;
         }
 
-        if((Mathf.Abs(Enter_Pos.y) > Mathf.Abs(Exit_Pos.y)) && GameOver)
+        if ((Mathf.Abs(Enter_Pos.y) > Mathf.Abs(Exit_Pos.y)) && GameOver)
         {
             StartCoroutine(GameOverFunc());
         }
