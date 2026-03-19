@@ -17,18 +17,19 @@ public class ScoreMangement : MonoBehaviour
         ScoreText.text = "Score : " + Score.ToString();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(other.CompareTag("Basket"))
+        if (collision.CompareTag("Basket"))
         {
             ScoreAudioSource.PlayOneShot(ScoreAudioClip);
 
-            Score ++;
+            Score++;
             ScoreText.text = "Score : " + Score.ToString();
 
         }
 
-
     }
+
+
 
 }
