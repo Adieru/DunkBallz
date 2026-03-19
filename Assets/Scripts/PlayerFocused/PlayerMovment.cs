@@ -32,7 +32,7 @@ public class PlayerMovment : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+      if(Input.GetMouseButtonDown(0))
         {
             JumpAllowed = true;
         }
